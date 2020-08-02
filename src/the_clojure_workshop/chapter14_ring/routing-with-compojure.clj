@@ -3,13 +3,17 @@
             [compojure.core :refer [defroutes GET]]
             [compojure.route :as route]))
 
-(def route 
-  (GET "/" request "Hello World"))
+(defroutes routes
+  (GET "/" request "Hello World")
+  (GET "/route-1" request "Hello from route-1")
+  (GET "/route-2" request "Hello from route-2")
+  (route/not-found "Not the route you are looking for"))
 
 (defn run
   []
-  (run-jetty route {:port 8080
-                    :join? false}))
+  (run-jetty routes {:port 8080
+                     :join? false}))
 
 (def app (run))
+
 (.stop app)

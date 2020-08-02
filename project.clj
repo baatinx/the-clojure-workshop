@@ -6,7 +6,9 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [ring/ring-core "1.8.1"]
                  [ring/ring-jetty-adapter "1.8.1"]
-                 [compojure "1.6.1"]]
+                 [compojure "1.6.1"]
+                 [metosin/muuntaja "0.6.7"]
+                 [metosin/jsonista "0.2.6"]]
   :main ^:skip-aot the-clojure-workshop.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
