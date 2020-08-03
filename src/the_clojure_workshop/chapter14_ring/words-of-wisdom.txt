@@ -7,4 +7,5 @@ The full set of supported methods are GET, POST, PUT, DELETE, HEAD,
 PATCH, CONNECT, OPTIONS, and TRACE. The first four of which are most
 typically encountered.
 
-2. 
+2. JSON to EDN conversion leads to a loss of data. This is due to EDN having more built-in type
+support than JSON (for example, sets and keywords)
