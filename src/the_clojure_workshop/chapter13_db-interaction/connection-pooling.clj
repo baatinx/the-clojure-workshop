@@ -12,6 +12,7 @@
 
 ;; Alternatively, if we know the database already exists, then the create=true flag will not be required. 
 
-(def db {:datasource (hikari/make-datasource {:database-name "derby-local"                                              :datasource-class-name "org.apache.derby.jdbc.EmbeddedDataSource"})})
+(def db {:datasource (hikari/make-datasource {:database-name "derby-local"                                            
+                                              :datasource-class-name "org.apache.derby.jdbc.EmbeddedDataSource"})})
 ;; => Syntax error (ClassNotFoundException) compiling at (form-init1926450246182458802.clj:1:22) org.apache.derby.jdbc.EmbeddedDataSource
 ;; => class clojure.lang.Compiler$CompilerException 

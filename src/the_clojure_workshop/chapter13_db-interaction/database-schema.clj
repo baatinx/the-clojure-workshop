@@ -1,6 +1,7 @@
 (ns the-clojure-workshop.chapter13-db-interaction.database-schema
   (:require [clojure.java.jdbc :as jdbc]
-            [clojure.string :as s]))
+            [clojure.string :as s]
+            [hikari-cp.core :as hikari]))
 
 ;; (def create-app-user-ddl "CREATE TABLE app_user (
 ;;                           id INT GENERATED ALWAYS AS IDENTITY CONSTRAINT USER_ID_PK PRIMARY KEY,
@@ -26,7 +27,7 @@
 ;;    duration INT,
 ;;    user_id INT REFERENCES app_user ON DELETE CASCADE)")
 
-(def create-app-useer-ddl
+(def create-activity-ddl
   (jdbc/create-table-ddl :activity
                          [[:id :int "PRIMARY KEY GENERATED ALWAYS AS IDENTITY "]
                           [:activity_type "varchar(32)"]
@@ -34,3 +35,13 @@
                           [:duration :int]
                           [:user_id :int "REFERENCES app_user ON DELETE CASCADE"]]
                          {:entities s/lower-case}))
+
+(def db {:datasource (hikari/make-datasource {:jdbc-url "jdbc:derby:derby-local;create=true"})})
+(defn create-schema
+  []
+  (jdbc/db-do-commands db [create-app-user-ddl create-activity-ddl]))
+
+(create-schema)
+;; => (0 0)
+
+

@@ -16,6 +16,13 @@ Inserting, updating, and deleting will indeed result in a side effect – that o
 persistent storage in some way. A query, by contrast, is a simple read function and will
 have no effect besides data retrieval.
 
+3. When inserting data, there are several considerations to keep in mind. If inserting
+a single row, use insert!. If inserting multiple rows, use insert-multi!. If we are
+interested in the generated keys, then we should favor map insertion mode. If, on
+the other hand, performance is critical, we may favor vector insertion mode. When
+inserting a mixture of full and partial rows, then the reader may use their personal
+preference of map versus vector mode.
+
 
 ;; ****************************************************************************************************
 ;; chapter 14 - HTTP with Ring
