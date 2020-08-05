@@ -11,6 +11,8 @@
                  [hikari-cp "2.13.0"] 
                  [semantic-csv "0.2.1-alpha1"]
                  [org.clojure/data.csv "1.0.0"]
+                 [clojure.java-time "0.3.2"]
+                 [medley "1.3.0"]
                  
                  ;; chapter 14 -depn.
                  [ring/ring-core "1.8.1"]

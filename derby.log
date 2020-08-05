@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Mon Aug 03 23:30:51 IST 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0173-b57b-944d-000003ba3190 
+Wed Aug 05 10:33:21 IST 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0173-bd00-74fb-0000036b7258 
 on database directory /home/mustafa-basit/Documents/Git@MustafaBasit/Clojure/the-clojure-workshop/derby-local with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487 
 Loaded from file:/home/mustafa-basit/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=Ubuntu

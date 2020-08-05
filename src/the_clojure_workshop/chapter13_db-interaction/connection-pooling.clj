@@ -4,6 +4,7 @@
 
 ;; option 1
 (def db {:datasource (hikari/make-datasource {:jdbc-url "jdbc:derby:derby-local;create=true"})})
+;; ----------------------------------------------------------:-----:-----------;
 (jdbc/get-connection db)
 ;; => #object[com.zaxxer.hikari.pool.HikariProxyConnection 0x4022b055 "HikariProxyConnection@1076015189 
 ;;    wrapping org.apache.derby.impl.jdbc.EmbedConnection@1816106010 (XID = 13), (SESSIONID = 1), (DATABASE = derby-local), (DRDAID = null) "]

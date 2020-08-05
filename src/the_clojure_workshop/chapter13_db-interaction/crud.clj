@@ -137,6 +137,5 @@
 (jdbc/delete! db :app_user [])
 ;; => [3]
 
-(jdbc/db-do-commands db (jdbc/drop-table-ddl :activity))
-(jdbc/db-do-commands db (jdbc/drop-table-ddl :app_user))
-;; => (0)
+(jdbc/execute! db ["drop table activity"])
+(jdbc/execute! db ["drop table app_user"])

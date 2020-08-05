@@ -23,6 +23,8 @@ the other hand, performance is critical, we may favor vector insertion mode. Whe
 inserting a mixture of full and partial rows, then the reader may use their personal
 preference of map versus vector mode.
 
+4. doseq can be used to iterate over a collection when we are not interested in the result (as we are when using map). 
+
 
 ;; ****************************************************************************************************
 ;; chapter 14 - HTTP with Ring
