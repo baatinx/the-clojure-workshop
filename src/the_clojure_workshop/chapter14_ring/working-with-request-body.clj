@@ -1,4 +1,4 @@
-(ns the-clojure-workshop.chapter14-worwking-with-request-body
+(ns the-clojure-workshop.chapter14-ring.working-with-request-body
   (:require [ring.adapter.jetty :refer [run-jetty]]
             [compojure.core :refer [defroutes GET PUT DELETE]]
             [compojure.route :as route]
