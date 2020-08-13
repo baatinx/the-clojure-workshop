@@ -86,3 +86,6 @@ and the React frameworks automatically update the DOM and render the component o
 5. If a complex component's behavior is required by the application, such as doing
 something special as soon as the component is mounted or just before the component
 is updated, React provides lifecycle methods that the component can interact with
+
+6. The difference between defonce and def is that when defonce is called twice, the second
+call has no effect.
