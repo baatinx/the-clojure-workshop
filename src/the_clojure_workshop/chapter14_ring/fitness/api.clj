@@ -10,18 +10,18 @@
             [the-clojure-workshop.chapter13-db-interaction.fitness.ingestion :as ingest]
             [the-clojure-workshop.chapter13-db-interaction.fitness.query :as query]))
 
-;; *** 
+;; ***
 ;; see also p.no 645 - ....... {:keys [id] :params}.....
 
 (defroutes routes
   (context "/users" []
     (GET "/" []
       {:body (query/all-users schema/db)})
-    (POST "/" req 
+    (POST "/" req
       (let [ingest-result (ingest/user schema/db  (edn/read-string (slurp (:body req))))]
         {:status 201
          :headers {"Link" (str "/users/" (:1 ingest-result))}}))
-    (GET "/:id" [id] 
+    (GET "/:id" [id]
       (when-first [user (query/user schema/db id)]
         {:body user}))
     (GET "/:id/activities" [id]
@@ -37,7 +37,8 @@
       (when-first [activity (query/activity schema/db id)]
         {:body activity})))
   (route/not-found "Not found"))
-;; reporting context - pending 
+
+;; reporting context - pending
 
 ;; ***
 ;; It is important to remember that our body is represented as a stream, meaning
